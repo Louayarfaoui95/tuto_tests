@@ -18,7 +18,7 @@ cmake -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>/install -DCMAKE_BUILD_TYPE=Debug ..
 make
 make install
 ```
-## Set up env 
+## Set up env (for custom install of cmocka only)
 just need to update LD_LIBRARY_PATH:
 ```shell
 export LD_LIBRARY_PATH=<INSTALL_DIR>/install/lib
@@ -63,7 +63,7 @@ gcc src/test_file1.o src/file1.o -o test1 -L../../cmocka-1.1.5/install/lib64 -lc
 `f1` function is tested by `test_f1__1()` test function very simply with `assert_int_equal` cmocka primitive.
 
 ### testing f2
-`f2` function is tested by `test_f2__1()` and `test_f2__1()` tests functions and with a mock of `fa`.
+`f2` function is tested by `test_f2__1()` and `test_f2__2()` tests functions and with a mock of `fa`.
 
 ## to continue
 Are the test complete enought ?  
@@ -72,7 +72,8 @@ Complete the tests with
   - for that, good ex in https://blog.microjoe.org/2017/unit-tests-c-cmocka-coverage-cmake.html#id14 using `expect_string` and `check_expected`.  
     See API documentation : https://api.cmocka.org/group__cmocka__param.html. Use to check values passes to parameters during call of `fa()` with primitives `check_expected`, `expect_value` and `expect_in_range_count`.
 - a more complete criteria
-  - functional coverage
+  - equivalence classes
+  - equivalence classes with limits
   - statement coverage
   - decision coverage
   - MCDC coverage (just know that can exist, check https://fr.wikipedia.org/wiki/MC/DC)
