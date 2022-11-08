@@ -35,7 +35,7 @@ void test_f2__1(void **state)
     int ret;
 
     will_return(fa, 0);
-    will_return(fa, 0);
+    will_return(fa, 15);
     ret = f2(1);
     assert_int_equal(0, ret);
 
@@ -49,7 +49,7 @@ void test_f2__2(void **state)
     will_return(fa, 0);
     will_return(fa, 2);
     ret = f2(1);
-    assert_int_equal(-1, ret);
+    assert_int_equal(-2, ret);
 
 }
 

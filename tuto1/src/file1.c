@@ -15,23 +15,21 @@ int f1 (int p)
 int f2(int a)
 {
   int ret = 0;
+  int status = -1;
 
   ret = fa(a);
 
   if (ret == 0)
     {
       ret = fa(a+1);
-      if (ret == 0)
+      if (ret >= 10 & ret < 20)
         {
-          return 0;
+          status = 0;
         }
       else
         {
-          return -1;
+          status = -2;
         }
     }
-  else
-    {
-      return -1;
-    }
+  return status ;
 }
