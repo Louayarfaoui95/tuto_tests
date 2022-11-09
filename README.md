@@ -3,7 +3,7 @@ tuto and ex for unit test
 
 ## Prerequisites
 
-### Having CMOCKA installed
+### Having CMOCKA installed (if not installed)
 see install procédure on https://github.com/clibs/cmocka/blob/master/INSTALL.md  
 But also, you can adapt the folowing command, please, replace `<INSTALL_DIR>`  with the dir where you have installed cmocka.  
 Depending the system, you may use `install/lib64` instead of `install/lib`
@@ -67,16 +67,21 @@ gcc src/test_file1.o src/file1.o -o test1 -L../../cmocka-1.1.5/install/lib64 -lc
 
 ## to continue
 Are the test complete enought ?  
-Complete the tests with
-- testing arguments of the called functions
+Complete the tests 
+- to cover more feature (ex :testing arguments of the called functions)
   - for that, good ex in https://blog.microjoe.org/2017/unit-tests-c-cmocka-coverage-cmake.html#id14 using `expect_string` and `check_expected`.  
     See API documentation : https://api.cmocka.org/group__cmocka__param.html. Use to check values passes to parameters during call of `fa()` with primitives `check_expected`, `expect_value` and `expect_in_range_count`.
 - a more complete criteria
-  - equivalence classes
-  - equivalence classes with limits
+  - black box:
+    - equivalence classes
+    - equivalence classes with limits
   - statement coverage
   - decision coverage
   - MCDC coverage (just know that can exist, check https://fr.wikipedia.org/wiki/MC/DC)
+
+present scenario in a table with:
+- a row for each scenario
+- columns for each input and output of the scenario
 
 
 
